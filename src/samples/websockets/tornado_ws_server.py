@@ -6,11 +6,11 @@ import tornado.web
 import tornado.httpserver
 import tornado.ioloop
 import tornado.websocket as ws
-import tornado.options
+from tornado.options import define, options
 import time
 
-LISTEN_PORT = 4041
-LISTEN_ADDRESS = 'localhost'
+define('port', default=4041, help='port to listen on')
+
 
 class web_socket_handler(ws.WebSocketHandler):
     '''
@@ -47,7 +47,7 @@ class web_socket_handler(ws.WebSocketHandler):
             Channel is closed
         '''
         print("connection is closed")
-        self.loop.stop()
+
     
     def check_origin(self, origin):
         return True
@@ -59,7 +59,7 @@ def initiate_server():
     
     #setup the server
     server = tornado.httpserver.HTTPServer(app)
-    server.listen(LISTEN_PORT, LISTEN_ADDRESS)
+    server.listen(options.port)
     
     #start io/event loop
     tornado.ioloop.IOLoop.instance().start()
