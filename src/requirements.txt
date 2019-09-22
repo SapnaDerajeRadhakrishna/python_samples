@@ -3,3 +3,4 @@ websockets==8.0.2
 tornado==6.0.3
 python-socketio==4.3.1
 aiohttp==3.6.1
+Flask-SocketIO==4.2.1
