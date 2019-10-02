@@ -14,7 +14,7 @@ socket_io.attach(web_app)
 #define endpoints 
 async def index(request):
     dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, '/templates/socket_io.html')
+    filename = os.path.join(dirname, 'templates/socket_io.html')
     with open(filename) as file_obj:
         return web.Response(text = file_obj.read(), content_type='text/html')
 
