@@ -5,3 +5,5 @@ python-socketio==4.3.1
 aiohttp==3.6.1
 Flask-SocketIO==4.2.1
 openpyxl==3.0.0
+pandas==0.25.1
+pyperclip==1.7.0
