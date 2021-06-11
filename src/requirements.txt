@@ -1,5 +1,5 @@
 websocket_client==0.56.0
-websockets==8.0.2
+websockets==9.1
 tornado==6.0.3
 python-socketio==4.3.1
 aiohttp==3.6.1
